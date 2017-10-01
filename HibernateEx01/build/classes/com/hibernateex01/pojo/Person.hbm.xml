@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.hibernateex01.pojo.Person" table="person" optimistic-lock="version">
+		<id name="personid" type="int">
+			<column name="personid"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="Name" type="string">
+			<column name="name"></column>
+		</property>
+		<property name="Lastname" type="string">
+			<column name="lastname"></column>
+		</property>
+		<property name="Age" type="int">
+			<column name="age"></column>
+		</property>
+		<property name="Nationality" type="string">
+			<column name="nationality"></column>
+		</property>
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<body>
+	<div id="addPerson">
+		<h:form>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><h:inputText size="20" value="#{personList.person.name}"/></td>
+				</tr>
+				<tr>
+					<td>LastName</td>
+					<td><h:inputText size="20" value="#{personList.person.lastname}"/></td>
+				</tr>
+				<tr>
+					<td>Age</td>
+					<td><h:inputText size="20" value="#{personList.person.age}"/></td>
+				</tr>
+				<tr>
+					<td>Nationality</td>
+					<td><h:inputText size="20" value="#{personList.person.nationality}"/></td>
+				</tr>
+				<tr>
+					<td><h:commandButton value="Add Person" action="#{personList.addPeople()}"></h:commandButton></td>
+				</tr>
+			</table>
+		</h:form>
+	</div>
+	
+	<div id="showPerson">
+		<h:form>
+			<h:dataTable value="#{personList.records}" var="person">
+				<h:column>
+					<f:facet name="header">Name</f:facet>#{person.name}
+				</h:column>
+				<h:column>
+					<f:facet name="header">LastName</f:facet>#{person.lastname}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Age</f:facet>#{person.age}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Nationality</f:facet>#{person.nationality}
+				</h:column>
+				<h:column>
+					<f:facet name="header">Delete</f:facet>
+					<h:commandButton action="#{personList.deletePerson(person)}" value="Delete Person" />
+				</h:column>
+			</h:dataTable>
+		</h:form>
+	</div>
+</body>
+</html>

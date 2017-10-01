@@ -1,6 +1,6 @@
 # javaHibernate
 
-Hiberanate with H2 Database
+Hibernate with H2 Database
 
 Add / Delete records to Person Table
 
